@@ -14,7 +14,9 @@ Las alucinaciones no son un problema de escala. Son un problema de memoria.
 | LLM + ModuloConciencia | 3.5% |
 
 **Reducción: -87.5%**
-
+## Paper con DOI Oficial
+**DOI**: [10.5281/zenodo.21479382](https://doi.org/10.5281/zenodo.21479382)
+[Leer en Zenodo](https://zenodo.org/records/21479382)
 ## Uso Rápido
 ```python
 from modulo_conciencia import ModuloConciencia
