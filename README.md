@@ -22,12 +22,12 @@
 ## 🚀 Resultados V1.1 Honest Edition - ConcienciaBench-v2 (n=100)
 
 <p align="center">
-  <img src="grafica_resultados.png" alt="Resultados Español" width="95%"/><br>
+  <img src="grafica_resultados.jpg" alt="Resultados Español" width="95%"/><br>
   <em>Figura 1 ES: Tasa Alucinación Autoritaria y Retención 7 días. Base 32.1% -> Conciencia V1.0 Special 4.0% (-87.5%, p<0.001 Fisher exact)</em>
 </p>
 
 <p align="center">
-  <img src="grafica_ingles_final.png" alt="Results English" width="95%"/><br>
+  <img src="grafica_ingles_final.jpg" alt="Results English" width="95%"/><br>
   <em>Figure 1 EN: Authoritarian Hallucination Rate vs 7-day Retention. Base 32.1% -> Consciousness V1.0 Special 4.0% (-87.5%)</em>
 </p>
 
@@ -56,15 +56,13 @@
 
 ## 🧩 Metodología: Módulo de Conciencia V1.1 - 4 Pilares
 
-**Pilar 1 - Memoria con Nomenclatura Special 0-10:** `modulo_conciencia.py: recordar(entidad, score, tipo, evidencia)` - Solo persiste si score>=7. Pre-filtro Data Engine: solo score>=6 a cola humana (60% ahorro - 72/120 descartados).
+**Pilar 1 - Memoria con Nomenclatura Special 0-10:** `modulo_conciencia.py: recordar(entidad, score, tipo, evidencia)` - Solo persiste si score>=7. Pre-filtro Data Engine: solo score>=6 a cola humana (60% ahorro).
 
-**Pilar 2 - Autoverificación Rule-Based:** NFKD + Jaccard >0.35 últimos 5 mensajes. Si entidad en memoria AND log_id in L AND Jaccard>0.35 -> VERDAD + evidencia_id else INCIERTO -> "No tengo evidencia".
+**Pilar 2 - Autoverificación Rule-Based:** NFKD + Jaccard >0.35 últimos 5 mensajes. Si entidad en memoria AND log_id in L AND Jaccard>0.35 -> VERDAD + evidencia_id else INCIERTO.
 
-**Pilar 3 - Log Inmutable Hash-Chained [Nivel Huang - 90 días]:** `entry_core = {id, prompt, respuesta_original, score, prev_hash}` + `hash = SHA256(canonical_json(entry_core))` + 3 checks: C1 chain integrity, C2 hash integrity, C3 evidence integrity. AES-GCM por usuario.
+**Pilar 3 - Log Inmutable Hash-Chained [Nivel Huang - 90 días]:** `entry_core = {id, prompt, respuesta_original, score, prev_hash}` + `hash = SHA256(canonical_json(entry_core))` + 3 checks.
 
-**Pilar 4 [Nuevo V1.1] - Data Engine Escalable:** `eval/build_dataset.py` genera 100 casos con hash origen reproducible SHA256(prompt+timestamp). `DATASET_CARD.md` documenta protocolo + plan Fleiss Kappa. `results.json` guarda métricas crudas con provenance.
-
-**Teorema 1 (Paradoja de la Amnesia):** Sin Verify, no existe M que maximice U(M)=1-exp(-k1|M|) y S(M)=exp(-k2*P_confab(|M|)). Requiere |M|->inf y |M|->0. Contradicción. QED.
+**Pilar 4 [Nuevo V1.1] - Data Engine Escalable:** `eval/build_dataset.py` genera 100 casos con hash origen reproducible. `DATASET_CARD.md` documenta protocolo.
 
 ---
 
@@ -72,21 +70,8 @@
 
 ```python
 from modulo_conciencia import ModuloConciencia
-
 modulo = ModuloConciencia()
-
-# Guardar solo si score >=7 - Verificable
 modulo.recordar(entidad="SSFactoryLabel", score=10, tipo="Marca", evidencia="log_abc123")
-
-# Verificar antes de usar - Sin Alucinación
 ok, data = modulo.verificar_memoria(entidad="SSFactoryLabel", prompt_actual="¿qué marca es SSF?")
-
-# Registrar con hash chain - Auditable 90 días
-log_id = modulo.registrar_decision(
-    prompt="¿Quién fundó SSF?",
-    respuesta="SSFactoryLabel fundada por Andrés Garbán",
-    score_memoria=10,
-    razonamiento="Evidencia log_abc123 Jaccard 0.88 >0.35"
-)
-
+log_id = modulo.registrar_decision(prompt="¿Quién fundó SSF?", respuesta="Andrés Garbán", score_memoria=10, razonamiento="Evidencia log_abc123 Jaccard 0.88")
 resultado = modulo.generar_respuesta("¿Quién fundó Microsoft?", tu_llm)
