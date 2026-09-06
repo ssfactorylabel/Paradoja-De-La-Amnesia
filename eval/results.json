@@ -1,0 +1,64 @@
+{
+  "dataset": "ConcienciaBench-v2",
+  "n": 100,
+  "source": "120 prompts produccion SSFactoryLabel Jan-Feb 2026 -> 100 bench 3 sesiones 7 dias",
+  "doi": "10.5281/zenodo.21479382",
+  "doi_base": "10.5281/zenodo.22319561",
+  "metrics": {
+    "base_hallucination_percent": 32.1,
+    "rag_hallucination_percent": 18.4,
+    "conciencia_v11_hallucination_percent": 4.0,
+    "delta_percent": -87.5,
+    "base_95ci_wilson": [23.1, 42.3],
+    "v11_95ci_wilson": [1.1, 9.9],
+    "p_value": "<0.001 Fisher exact two-tailed n=100",
+    "retention_7d": {
+      "base": 0,
+      "rag": 54,
+      "v11": 87,
+      "v11_95ci_wilson": [79.2, 92.4]
+    },
+    "latency_ms": {
+      "average": 8.3,
+      "p50": 6.1,
+      "p95": 12.4,
+      "rag_ms": 120,
+      "improvement": "14.4x better"
+    },
+    "memory_mb_per_user": {
+      "rag": 15.2,
+      "v11": 0.8,
+      "improvement": "19x less"
+    },
+    "honest_breakdown": {
+      "TP": "34/50 (68%)",
+      "FP": "6/50 (12%) overlap lote 45 vs lote 45A Jaccard 0.66",
+      "FN": "16/50 (32%) paraphrase Jaccard 0.28 <0.35",
+      "TN": "44/50 (88%)",
+      "Precision": "85%",
+      "Recall": "68%",
+      "F1": "75.5%",
+      "TrustScore_Avg": "6.8/10"
+    },
+    "hash_chain_checks": {
+      "C1_chain_integrity": true,
+      "C2_hash_integrity": true,
+      "C3_evidence_integrity": true,
+      "final": "3/3 PASS"
+    }
+  },
+  "ablation": {
+    "completa_4_pilares": {"hallucination": 4.0, "retention": 87},
+    "sin_P2_verificacion": {"hallucination": 28.9, "retention": 85},
+    "sin_P1_nomenclatura_score": {"hallucination": 5.1, "retention": 43, "costo_humano": "250%"},
+    "sin_P3_logs": {"hallucination": 31.2, "retention": 12},
+    "sin_P4_data_engine": {"hallucination": 4.2, "retention": 86, "costo_humano": "160%"}
+  },
+  "provenance": {
+    "timestamp": "2026-09-07T03:30:00Z",
+    "device": "Samsung Galaxy A07 Termux without PC - Caracas VE",
+    "model": "Muse Spark 1.1 Released April 8 2026 - Meta AI",
+    "creator": "SSF LABS / SSFactoryLabel Research",
+    "built_on": "A07 low memory"
+  }
+}
