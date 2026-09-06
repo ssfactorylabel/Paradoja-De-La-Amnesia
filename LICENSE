@@ -1,6 +1,13 @@
+MIT License + CC-BY-4.0 - Dual License
+SSF LABS / SSFactoryLabel - La Paradoja de la Amnesia V1.1 Special Edition
+
+PARTE 1: SOFTWARE CODE - MIT LICENSE
+
+
 MIT License
 
-Copyright (c) 2026 Ssfactorylabel 
+Copyright (c) 2026 SSF LABS / SSFactoryLabel - Andrés Garbán Hernández
+Caracas, VE - Built on Samsung Galaxy A07, Termux, without PC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +26,93 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Software Covered by MIT:
+- modulo_conciencia.py (P1-P4, 4 pilares, NFKD+Jaccard>0.35, hash chain)
+- experimento.py (ConcienciaBench-v2 benchmark)
+- eval/*.py (test_honestidad.py, verificar_cadena.py, build_dataset.py)
+- All code in /eval/, /src/, root *.py files
+
+PARTE 2: PAPER, DATASET, GRÁFICAS - CC-BY-4.0
+
+
+Creative Commons Attribution 4.0 International License
+
+Copyright (c) 2026 SSF LABS / SSFactoryLabel - Andrés Garbán Hernández
+
+Paper Title: La Paradoja de la Amnesia V1.1 - Special Edition
+            THE AMNESIA PARADOX V1.1 - From Audit to Verifiable Algorithmic Consciousness
+DOI: 10.5281/zenodo.21479382 (V1.1) | Base DOI: 10.5281/zenodo.22319561 (V0.3)
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, 
+  and indicate if changes were made. You may do so in any reasonable manner, but 
+  not in any way that suggests the licensor endorses you or your use.
+
+Attribution Format (required):
+"La Paradoja de la Amnesia V1.1 - Special Edition by Andrés Garbán Hernández / SSF LABS,
+ DOI: 10.5281/zenodo.21479382, licensed under CC-BY-4.0.
+ Built on Samsung Galaxy A07, Termux, without PC - Caracas, VE
+ Based on Meta AI Muse Spark 1.1 (Released April 8, 2026)"
+
+Materials Covered by CC-BY-4.0:
+- LA_PARADOJA_DE_LA_AMNESIA_V1.1.pdf (Spanish Edition)
+- THE_AMNESIA_PARADOX_V1.1_ENGLISH_FINAL.pdf (English Edition)
+- DATASET_CARD.md (ConcienciaBench-v2 protocol)
+- eval/results.json (metrics with provenance, Wilson CI, Fisher exact)
+- grafica_resultados.png (Figura 1 ES)
+- grafica_ingles_final.png (Figure 1 EN)
+- ssf-labs-logo.jpg (SSF LABS logo)
+- README.md documentation
+- ConcienciaBench-v2 dataset (100 diálogos, 120 prompts SSF Jan-Feb 2026)
+
+Full CC-BY-4.0 text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+PARTE 3: CLÁUSULA DE HONESTIDAD ALGORÍTMICA - SSF LABS SPECIAL
+
+
+Algorithmic Honesty First - Verifiable Claims Only
+
+1. Todas las métricas 32.1% -> 4.0% (-87.5%), 87% retención, +8.3ms, 0.8MB
+   deben citarse con: n=100, Wilson CI, p<0.001 Fisher exact two-tailed, 
+   Honest Breakdown TP 34/50 FP 6/50 FN 16/50 TN 44/50, y limitaciones del DATASET_CARD.md
+
+2. Prohibido citar 28.5% -> 3.5% (V0.3 obsoleto) como V1.1
+
+3. Cualquier implementación debe implementar 3 checks de eval/verificar_cadena.py:
+   C1 chain integrity, C2 hash integrity, C3 evidence integrity
+
+4. Logs con PII deben estar en .gitignore y encriptados AES-GCM por user_id (v3.0)
+
+5. Built on A07 Termux - benchmarks en ARM Cortex-A55, no H100 x86 - citar dispositivo
+
+CONTACTO / CITACIÓN
+
+
+Repo: https://github.com/ssfactorylabel/conciencia-algoritmica
+DOI V1.1: https://doi.org/10.5281/zenodo.21479382
+Autor: Andrés Garbán Hernández - SSF LABS / SSFactoryLabel
+Email: via GitHub Issues
+Ubicación: Caracas, Capital District, VE
+
+Cómo citar este trabajo (BibTeX):
+@software{garban2026amnesia,
+  title={La Paradoja de la Amnesia V1.1 - Special Edition: From Audit to Verifiable Algorithmic Consciousness},
+  author={Garbán Hernández, Andrés and SSF LABS},
+  year={2026},
+  doi={10.5281/zenodo.21479382},
+  url={https://doi.org/10.5281/zenodo.21479382},
+  note={Built on Samsung Galaxy A07, Termux, without PC. 4 pillars, ConcienciaBench-v2 n=100, 32.1%->4.0% -87.5% p<0.001, 87% retention, +8.3ms 0.8MB}
+}
+
+@inproceedings{garban2026amnesia_paper,
+  title={THE AMNESIA PARADOX V1.1: Consciousness = Filtered Memory + Verification + Accountability + Data Engine},
+  author={Garbán Hernández, Andrés},
+  year={2026},
+  doi={10.5281/zenodo.21479382},
+  publisher={Zenodo}
+}
