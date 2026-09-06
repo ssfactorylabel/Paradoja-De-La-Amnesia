@@ -1,0 +1,6 @@
+# Conciencia Algorítmica V1.1 Special Edition
+# SSF LABS / SSFactoryLabel - A07 Termux without PC - Caracas VE
+# DOI: 10.5281/zenodo.21479382
+# No API key needed for eval/test_honestidad.py - Mock mode <2s A07
+
+cryptography>=42.0.0; python_version >= "3.8"
